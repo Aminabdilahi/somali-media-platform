@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page: 238 241 242; --surface: 248 250 250; --ink: 23 34 43; --muted: 91 107 118;
+  --rule: 203 213 218; --sea: 31 95 122; --amber: 168 101 11; --alert: 176 58 46; --ok: 47 125 91;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: 14 22 29; --surface: 20 31 40; --ink: 227 234 238; --muted: 140 156 167;
+    --rule: 42 57 69; --sea: 91 176 209; --amber: 224 162 59; --alert: 232 120 107; --ok: 95 191 148;
+  }
+}
+body { @apply bg-page text-ink font-sans antialiased; }
+:focus-visible { outline: 2px solid rgb(var(--sea)); outline-offset: 2px; }
+.field { @apply w-full border border-rule bg-surface px-3 py-2 text-sm rounded-sm; }
+.btn { @apply inline-block bg-sea px-4 py-2 text-sm font-medium text-page rounded-sm disabled:opacity-50; }
+.btn-quiet { @apply inline-block border border-rule px-3 py-1.5 text-sm rounded-sm hover:border-sea; }
